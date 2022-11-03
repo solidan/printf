@@ -6,14 +6,14 @@
 #    By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/21 11:44:18 by acuesta-          #+#    #+#              #
-#    Updated: 2022/10/25 12:18:33 by acuesta-         ###   ########.fr        #
+#    Updated: 2022/11/02 13:18:49 by acuesta-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = libftprintf.a
 
-# INCLUDES = libft.h
+#INCLUDES = libft.h
 
 CC = gcc
 
