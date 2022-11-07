@@ -6,7 +6,7 @@
 /*   By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 12:55:55 by acuesta-          #+#    #+#             */
-/*   Updated: 2022/11/03 11:16:20 by acuesta-         ###   ########.fr       */
+/*   Updated: 2022/11/07 11:11:44 by acuesta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_printstr(char *str)
 	i = 0;
 	if (str == NULL)
 	{
-		ft_putstr("(null)");
+		ft_putstr("null");
 		return (6);
 	}
 	while (str[i])
@@ -62,14 +62,11 @@ int	ft_printnbr(int n)
 	return (len);
 }
 
-
-int	ft_printpercent(void)
+int	ft_porcent(void)
 {
 	write(1, "%", 1);
 	return (1);
 }
-
-
 
 int main(int argc, const char *argv[])
 {
