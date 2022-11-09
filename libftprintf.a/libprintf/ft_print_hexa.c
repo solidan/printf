@@ -6,48 +6,34 @@
 /*   By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 11:47:47 by acuesta-          #+#    #+#             */
-/*   Updated: 2022/11/07 12:19:27 by acuesta-         ###   ########.fr       */
+/*   Updated: 2022/11/09 11:42:36 by acuesta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <unistd.h>
 
-int	ft_hexa_len(unsigned	int num)
+void	ft_putchar_fd(char c, int fd)
 {
-	int	len;
-	len = 0;
-	while(num != 0)
-	{
-		len++;
-		num = num / 16;
-	}
-	return (len);
+	write(fd, &c, 1);
 }
 
-void	ft_put_hexa(unsigned int num, const char format)
+int	ft_hexa(unsigned long int n, char c, int fd)
 {
-	if (num <= 16)
+	int	long_n;
+
+	long_n = 1;
+	if (c == 'p' || c == 'x')
 	{
-		ft_put_hea(num /16, format);
-		ft_put_hexa(num % 16, format);
+		if (n >= 16)
+			long_n = long_n + ft_hexa(n / 16, c, fd);
+		ft_putchar_fd("0123456789abcdef"[n % 16], fd);
 	}
-	else
+	else if (c == 'X')
 	{
-		if (num <= 9)
-			ft_putchar((num -10 + 'a'), 1);
-		else
-		{
-		if(format =='x')
-			ft_putchar((num - 10 + 'a'), 1);
-		if(format =='X')
-			ft_putchar((num - 10 + 'A'), 1);
-		}	
+		if (n >= 16)
+			long_n = long_n + ft_hexa(n / 16, c, fd);
+		ft_putchar_fd("0123456789ABCDEF"[n % 16], fd);
 	}
-}
-int	ft_print_hexa(unsigned int num, const char format)
-{
-	if (num == 0)
-		return (write(1, "0", 1));
-	else
-	ft_put_hexa(num, format);
-	return(ft_hexa_len(num));
+	return (long_n);
 }
