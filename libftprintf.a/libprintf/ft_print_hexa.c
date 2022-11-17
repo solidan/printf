@@ -6,10 +6,11 @@
 /*   By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 11:47:47 by acuesta-          #+#    #+#             */
-/*   Updated: 2022/11/09 11:42:36 by acuesta-         ###   ########.fr       */
+/*   Updated: 2022/11/17 13:41:06 by acuesta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libftprintf.h"
 #include <stdio.h>
 #include <unistd.h>
 
@@ -17,6 +18,8 @@ void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
+
+
 
 int	ft_hexa(unsigned long int n, char c, int fd)
 {
