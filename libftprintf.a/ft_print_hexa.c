@@ -6,7 +6,7 @@
 /*   By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 11:47:47 by acuesta-          #+#    #+#             */
-/*   Updated: 2022/11/17 13:41:06 by acuesta-         ###   ########.fr       */
+/*   Updated: 2022/11/21 12:45:03 by acuesta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
-
-
 
 int	ft_hexa(unsigned long int n, char c, int fd)
 {
@@ -39,4 +37,9 @@ int	ft_hexa(unsigned long int n, char c, int fd)
 		ft_putchar_fd("0123456789ABCDEF"[n % 16], fd);
 	}
 	return (long_n);
+}
+
+int main (void)
+{
+	     
 }
