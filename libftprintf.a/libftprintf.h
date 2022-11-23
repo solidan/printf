@@ -6,7 +6,7 @@
 /*   By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 11:17:39 by acuesta-          #+#    #+#             */
-/*   Updated: 2022/11/21 13:33:25 by acuesta-         ###   ########.fr       */
+/*   Updated: 2022/11/23 12:31:21 by acuesta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		ft_printf(char const *s, ...);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstrt(char *str);
 int		ft_printstr(char *str);
-int		ft_strlen(char *str);
+size_t  ft_strlen(const char *s);
 void	ft_putptr(unsigned long long int ptr, int *len);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putu(unsigned int nb, int *len);

@@ -6,7 +6,7 @@
 /*   By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 12:55:55 by acuesta-          #+#    #+#             */
-/*   Updated: 2022/11/21 12:31:32 by acuesta-         ###   ########.fr       */
+/*   Updated: 2022/11/23 12:36:54 by acuesta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,15 +77,19 @@ void	ft_putnbr_fd(int n, int fd)
 }
 
 
-//  int	main(void)
-//  {
-//  	ft_putnbr_fd(123, 1);
-//  }
+
+
+
+
+// int	main(void)
+//{
+//   ft_putnbr_fd(123, 1);
+//}
  
-//    int	main(int argc, char **argv)
-//    {
-//    	(void)argc;
-//    	ft_putstrt(argv[0]);
-//    	ft_putstrt("\n");
-//    	return (0);
-//   }
+// int	main(int argc, char **argv)
+//{
+//  (void)argc;
+//  ft_putstrt(argv[0]);
+//  ft_putstrt("\n");
+//  return (0);
+// }

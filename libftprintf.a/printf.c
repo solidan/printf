@@ -6,7 +6,7 @@
 /*   By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:24:06 by acuesta-          #+#    #+#             */
-/*   Updated: 2022/11/21 13:26:33 by acuesta-         ###   ########.fr       */
+/*   Updated: 2022/11/23 10:18:58 by acuesta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,24 @@ void	ft_convert(va_list ptr, char const *s, int *len)
 }
 
 
-int	ft_printf(char const *s, ...)
+int	ft_printf(char const *str, ...)
 {
 	va_list ptr;
-	int		i;
 	int		len;
 	
-
+	len = 0;
+	va_start(ptr, str);
+	while (*str)
+	{
+		if(*str == '%')
+		{
+			len = ft_convert(ptr, *str, len);	// Comprueba si la cadena tiene un % en ella. Si lo hace, llamará a la función ft_convert. 
+			str++;
+		}
+		else{
+			len += ft_putchar_fd(*str);
+		}
+		va_end(ptr);
+		return(len);
+	}
 }
