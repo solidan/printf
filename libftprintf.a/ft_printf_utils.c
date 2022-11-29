@@ -6,7 +6,7 @@
 /*   By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 12:55:55 by acuesta-          #+#    #+#             */
-/*   Updated: 2022/11/28 11:46:57 by acuesta-         ###   ########.fr       */
+/*   Updated: 2022/11/29 13:39:46 by acuesta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,19 @@ void	ft_putchar(char c)
 	return(1);
 }
 
-int		ft_putstr(char *str)
-{
-	int	len;
 
-	i = 0;
-if (!str)
+int		ft_putstrt(char *str)
 {
-	write (1, "(null)", 6)
-	return(6);
+	int	i;
+	
+while(str[i] != 0)
+{
+	write (1, &str, 1);
+	i++;
 }
-len = ft_strlen(str);
-write(1, str, len);
-return(len);
+return(i);
 }
+
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -60,6 +59,7 @@ void	ft_putnbr(int nb, int *len)
 {
 	if (nb == -2147483648)
 		ft_putstr("-2147483648", len);
+
 	else if (nb < 0)
 	{
 		ft_putchar('-', len);
@@ -74,7 +74,7 @@ void	ft_putnbr(int nb, int *len)
 		ft_putchar(nb + 48, len);
 }
 
-void	ft_putu(unsigned int nb, int *len)
+void	ft_num_base(unsigned int nb, int *len)
 {
 	if (nb >= 10)
 	{
@@ -85,11 +85,26 @@ void	ft_putu(unsigned int nb, int *len)
 		ft_putchar(nb + 48, len);
 }
 
+
 int	ft_porcent(void)
 {
 	write (1, "%", 1);
 	return (1);
 }
+
+
+
+void	ft_putptr(unsigned long long int ptr, int *len)
+{
+	*len += write(1, "0x", 2);
+	if (ptr == 0)
+		*len += write(1, "0", 1);
+	else
+		ft_putnbr_base_ptr(ptr, "0123456789abcdef", len);
+}
+
+
+
 
 
 // int	main(void)

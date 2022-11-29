@@ -6,35 +6,36 @@
 /*   By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:24:06 by acuesta-          #+#    #+#             */
-/*   Updated: 2022/11/28 11:54:27 by acuesta-         ###   ########.fr       */
+/*   Updated: 2022/11/29 12:25:49 by acuesta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
+#include <stdarg.h>
 
-void ft_convert(va_list ptr, char const *s, int *len)
+void ft_convert(va_list ptr, char const *str, int *len)
 {
-	if (*s == 'c')
+	if (*str == 'c')
 		ft_putchar(va_arg(ptr, int), len);
-	else if (*s == 's')
+	else if (*str == 's')
 		ft_putstr(va_arg(ptr, char *), len);
-	else if (*s == 'p')
+	else if (*str == 'p')
 		ft_putptr(va_arg(ptr, unsigned long long int), len);
-	else if (*s == 'd')
+	else if (*str == 'd')
 		ft_putnbr(va_arg(ptr, int), len);
-	else if (*s == 'i')
+	else if (*str == 'i')
 		ft_putnbr(va_arg(ptr, int), len);
-	else if (*s == 'u')
-		ft_putu(va_arg(ptr, unsigned int), len);
-	else if (*s == 'x')
+	else if (*str == 'u')
+		ft_num_base(va_arg(ptr, unsigned int), len);
+	else if (*str == 'x')
 		ft_putnbr_hexa(va_arg(ptr, int), "0123456789abcdef", len);
-	else if (*s == 'X')
+	else if (*str == 'X')
 		ft_putnbr_hexa(va_arg(ptr, int), "0123456789ABCDEF", len);
-	else if (*s == '%')
+	else if (*str == '%')
 		*len += write(1, "%%", 1);
 }
 
-int ft_printf(char const *str, ...)
+int		ft_printf(char const *str, ...)
 {
 	va_list ptr;
 	int len;
@@ -50,10 +51,9 @@ int ft_printf(char const *str, ...)
 		}
 		else
 		{
-			len += ft_putchar_fd(*str); //Si no se encuentra, el carácter se imprimirá y se agregará a "ret", que es el control de cuántos caracteres se imprimieron.
+			len += ft_putchar_fd(*str); //Si no se encuentra, el carácter se imprimirá y se agregará a "len", que es cuántos caracteres se imprimieron.
 		}
 		va_end(ptr);
 		return (len);
 	}
 }
-
