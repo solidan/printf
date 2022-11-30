@@ -6,19 +6,19 @@
 /*   By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:24:06 by acuesta-          #+#    #+#             */
-/*   Updated: 2022/11/29 12:25:49 by acuesta-         ###   ########.fr       */
+/*   Updated: 2022/11/30 12:57:47 by acuesta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 #include <stdarg.h>
 
-void ft_convert(va_list ptr, char const *str, int *len)
+void ft_convert(va_list ptr, const char *str, int *len)
 {
 	if (*str == 'c')
-		ft_putchar(va_arg(ptr, int), len);
+		ft_putchar(va_arg(ptr, int)); 
 	else if (*str == 's')
-		ft_putstr(va_arg(ptr, char *), len);
+		ft_putstrt(va_arg(ptr, char *));
 	else if (*str == 'p')
 		ft_putptr(va_arg(ptr, unsigned long long int), len);
 	else if (*str == 'd')
@@ -28,11 +28,11 @@ void ft_convert(va_list ptr, char const *str, int *len)
 	else if (*str == 'u')
 		ft_num_base(va_arg(ptr, unsigned int), len);
 	else if (*str == 'x')
-		ft_putnbr_hexa(va_arg(ptr, int), "0123456789abcdef", len);
+		ft_hexa(va_arg(ptr, int), "0123456789abcdef");
 	else if (*str == 'X')
-		ft_putnbr_hexa(va_arg(ptr, int), "0123456789ABCDEF", len);
+		ft_hexa(va_arg(ptr, int), "0123456789ABCDEF", len);
 	else if (*str == '%')
-		*len += write(1, "%%", 1);
+		*len += write(1, "%", 1);
 }
 
 int		ft_printf(char const *str, ...)
@@ -46,12 +46,12 @@ int		ft_printf(char const *str, ...)
 	{
 		if (*str == '%')
 		{
-			len = ft_convert(ptr, *str, len); // Comprueba si la cadena tiene un % en ella. Si lo hace, llamará a la función ft_convert.
+			ft_convert(ptr, str, &len); // Comprueba si la cadena tiene un % en ella. Si lo hace, llamará a la función ft_convert.
 			str++;
 		}
 		else
 		{
-			len += ft_putchar_fd(*str); //Si no se encuentra, el carácter se imprimirá y se agregará a "len", que es cuántos caracteres se imprimieron.
+			len += ft_putchar(*str); //Si no se encuentra, el carácter se imprimirá y se agregará a "len", que es cuántos caracteres se imprimieron.
 		}
 		va_end(ptr);
 		return (len);

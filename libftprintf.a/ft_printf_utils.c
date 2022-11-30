@@ -6,7 +6,7 @@
 /*   By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 12:55:55 by acuesta-          #+#    #+#             */
-/*   Updated: 2022/11/29 13:39:46 by acuesta-         ###   ########.fr       */
+/*   Updated: 2022/11/30 12:58:41 by acuesta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-void	ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
 	return(1);
 }
 
 
-int		ft_putstrt(char *str)
+int		ft_putstr(char *str int *len)
 {
 	int	i;
 	
@@ -45,15 +45,16 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	if (n < 0)
 	{
-		ft_putchar_fd('-', fd);
+		ft_putchar_fd('-');
 		nb = (unsigned int)(n * -1);
 	}
 	else
 		nb = (unsigned int)(n);
 	if (nb > 9)
 		ft_putnbr_fd (nb / 10, fd);
-	ft_putchar_fd ((char)(nb % 10 + '0'), fd);
+	ft_putchar ((char)(nb % 10 + '0'));
 }
+
 
 void	ft_putnbr(int nb, int *len)
 {
@@ -74,6 +75,7 @@ void	ft_putnbr(int nb, int *len)
 		ft_putchar(nb + 48, len);
 }
 
+
 void	ft_num_base(unsigned int nb, int *len)
 {
 	if (nb >= 10)
@@ -85,20 +87,11 @@ void	ft_num_base(unsigned int nb, int *len)
 		ft_putchar(nb + 48, len);
 }
 
-
-int	ft_porcent(void)
-{
-	write (1, "%", 1);
-	return (1);
-}
-
-
-
 void	ft_putptr(unsigned long long int ptr, int *len)
 {
-	*len += write(1, "0x", 2);
+	len += write(1, "0x", 2);
 	if (ptr == 0)
-		*len += write(1, "0", 1);
+		len += write(1, "0", 1);
 	else
 		ft_putnbr_base_ptr(ptr, "0123456789abcdef", len);
 }

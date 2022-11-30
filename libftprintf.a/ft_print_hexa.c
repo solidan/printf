@@ -6,7 +6,7 @@
 /*   By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 11:47:47 by acuesta-          #+#    #+#             */
-/*   Updated: 2022/11/23 12:32:30 by acuesta-         ###   ########.fr       */
+/*   Updated: 2022/11/30 12:58:30 by acuesta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,8 @@
 #include <stdio.h>
 #include <unistd.h>
 
-void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-}
 
-
-int	ft_hexa(unsigned long int n, char c, int fd)
+int	ft_hexa(unsigned long int n, char c)
 {
 	int	long_n;
 
@@ -28,20 +23,14 @@ int	ft_hexa(unsigned long int n, char c, int fd)
 	if (c == 'p' || c == 'x')
 	{
 		if (n >= 16)
-			long_n = long_n + ft_hexa(n / 16, c, fd);
-		ft_putchar_fd("0123456789abcdef"[n % 16], fd);
+			long_n = long_n + ft_hexa(n / 16, c);
+		ft_putchar("0123456789abcdef"[n % 16]);
 	}
 	else if (c == 'X')
 	{
 		if (n >= 16)
-			long_n = long_n + ft_hexa(n / 16, c, fd);
-		ft_putchar_fd("0123456789ABCDEF"[n % 16], fd);
+			long_n = long_n + ft_hexa(n / 16, c);
+		ft_putchar("0123456789ABCDEF"[n % 16]);
 	}
 	return (long_n);
-}
-
-int main (void)
-{
-	ft_hexa(123, 1, 5);
-	
 }
