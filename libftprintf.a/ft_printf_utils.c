@@ -6,7 +6,7 @@
 /*   By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 12:55:55 by acuesta-          #+#    #+#             */
-/*   Updated: 2022/11/30 12:58:41 by acuesta-         ###   ########.fr       */
+/*   Updated: 2022/12/01 09:50:36 by acuesta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,25 +76,25 @@ void	ft_putnbr(int nb, int *len)
 }
 
 
-void	ft_num_base(unsigned int nb, int *len)
-{
-	if (nb >= 10)
-	{
-		ft_putnbr(nb / 10, len);
-		ft_putnbr(nb % 10, len);
-	}
-	else if (nb >= 0)
-		ft_putchar(nb + 48, len);
-}
+// void	ft_num_base(unsigned int nb, int *len)
+// {
+// 	if (nb >= 10)
+// 	{
+// 		ft_putnbr(nb / 10, len);
+// 		ft_putnbr(nb % 10, len);
+// 	}
+// 	else if (nb >= 0)
+// 		ft_putchar(nb + 48, len);
+// }
 
-void	ft_putptr(unsigned long long int ptr, int *len)
-{
-	len += write(1, "0x", 2);
-	if (ptr == 0)
-		len += write(1, "0", 1);
-	else
-		ft_putnbr_base_ptr(ptr, "0123456789abcdef", len);
-}
+// void	ft_putptr(unsigned long long int ptr, int *len)
+// {
+// 	len += write(1, "0x", 2);
+// 	if (ptr == 0)
+// 		len += write(1, "0", 1);
+// 	else
+// 		ft_putnbr_base_ptr(ptr, "0123456789abcdef", len);
+// }
 
 
 

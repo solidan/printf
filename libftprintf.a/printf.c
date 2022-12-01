@@ -6,7 +6,7 @@
 /*   By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:24:06 by acuesta-          #+#    #+#             */
-/*   Updated: 2022/11/30 12:57:47 by acuesta-         ###   ########.fr       */
+/*   Updated: 2022/12/01 10:37:16 by acuesta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void ft_convert(va_list ptr, const char *str, int *len)
 	else if (*str == 'x')
 		ft_hexa(va_arg(ptr, int), "0123456789abcdef");
 	else if (*str == 'X')
-		ft_hexa(va_arg(ptr, int), "0123456789ABCDEF", len);
+		ft_hexa(va_arg(ptr, int), "0123456789ABCDEF");
 	else if (*str == '%')
 		*len += write(1, "%", 1);
 }
