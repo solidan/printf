@@ -6,7 +6,7 @@
 #    By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/21 11:44:18 by acuesta-          #+#    #+#              #
-#    Updated: 2022/11/21 13:29:36 by acuesta-         ###   ########.fr        #
+#    Updated: 2022/12/05 11:46:48 by acuesta-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ $(NAME): $(OBJS)  #$(INCLUDES)
 
 
 clean:
-	rm -rf *.o
+	rm -rf $(OBJS)
 
 fclean: clean
 	rm -f $(NAME)

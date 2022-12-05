@@ -6,7 +6,7 @@
 /*   By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 12:55:55 by acuesta-          #+#    #+#             */
-/*   Updated: 2022/12/01 09:50:36 by acuesta-         ###   ########.fr       */
+/*   Updated: 2022/12/05 11:30:17 by acuesta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,21 @@ int	ft_putchar(char c)
 }
 
 
-int		ft_putstr(char *str int *len)
+int		ft_putstr(char *str)
 {
 	int	i;
 	
-while(str[i] != 0)
-{
-	write (1, &str, 1);
-	i++;
-}
-return(i);
+	i = 0;
+	while(str[i] != 0)
+	{
+		write (1, &str, 1);
+		i++;
+	}
+	return(i);
 }
 
 
-void	ft_putnbr_fd(int n, int fd)
+/* void	ft_putnbr_fd(int n, int fd)
 {
 	unsigned int	nb;
 
@@ -53,26 +54,26 @@ void	ft_putnbr_fd(int n, int fd)
 	if (nb > 9)
 		ft_putnbr_fd (nb / 10, fd);
 	ft_putchar ((char)(nb % 10 + '0'));
-}
+} */
 
 
-void	ft_putnbr(int nb, int *len)
+void	ft_putnbr(int nb)
 {
 	if (nb == -2147483648)
-		ft_putstr("-2147483648", len);
+		ft_putstr("-2147483648");
 
 	else if (nb < 0)
 	{
-		ft_putchar('-', len);
-		ft_putnbr(-nb, len);
+		ft_putchar('-');
+		ft_putnbr(-nb);
 	}
 	if (nb >= 10)
 	{
-		ft_putnbr(nb / 10, len);
-		ft_putnbr(nb % 10, len);
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
 	}
 	else if (nb >= 0)
-		ft_putchar(nb + 48, len);
+		ft_putchar(nb + 48);
 }
 
 

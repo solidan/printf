@@ -6,7 +6,7 @@
 /*   By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:24:06 by acuesta-          #+#    #+#             */
-/*   Updated: 2022/12/01 10:37:16 by acuesta-         ###   ########.fr       */
+/*   Updated: 2022/12/05 11:49:57 by acuesta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,15 @@ void ft_convert(va_list ptr, const char *str, int *len)
 	else if (*str == 'p')
 		ft_putptr(va_arg(ptr, unsigned long long int), len);
 	else if (*str == 'd')
-		ft_putnbr(va_arg(ptr, int), len);
+		ft_putnbr(va_arg(ptr, int));
 	else if (*str == 'i')
-		ft_putnbr(va_arg(ptr, int), len);
+		ft_putnbr(va_arg(ptr, int));
 	else if (*str == 'u')
-		ft_num_base(va_arg(ptr, unsigned int), len);
+		ft_num_base(va_arg(ptr, unsigned int));
 	else if (*str == 'x')
-		ft_hexa(va_arg(ptr, int), "0123456789abcdef");
+		ft_printf_hex(va_arg(ptr, unsigned int));
 	else if (*str == 'X')
-		ft_hexa(va_arg(ptr, int), "0123456789ABCDEF");
+		 ft_printf_hex_may(va_arg(ptr, int));
 	else if (*str == '%')
 		*len += write(1, "%", 1);
 }
@@ -54,6 +54,8 @@ int		ft_printf(char const *str, ...)
 			len += ft_putchar(*str); //Si no se encuentra, el carácter se imprimirá y se agregará a "len", que es cuántos caracteres se imprimieron.
 		}
 		va_end(ptr);
-		return (len);
 	}
+	return (len);
 }
+
+
