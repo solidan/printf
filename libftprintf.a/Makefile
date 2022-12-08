@@ -6,14 +6,14 @@
 #    By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/21 11:44:18 by acuesta-          #+#    #+#              #
-#    Updated: 2022/12/05 11:46:48 by acuesta-         ###   ########.fr        #
+#    Updated: 2022/12/07 12:14:41 by acuesta-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = libftprintf.a
 
-INCLUDES = libftprintf.h
+INCLUDES = ft_printf.h
 
 CC = gcc
 
@@ -21,7 +21,8 @@ CFLAGS = -Wall -Wextra -Werror -g
 
 SRCS = printf.c\
        ft_printf_utils.c\
-	   ft_print_hexa.c
+	   ft_print_hexa.c\
+	   ft_putptr.c
 
 OBJS = $(SRCS:.c=.o)
 
