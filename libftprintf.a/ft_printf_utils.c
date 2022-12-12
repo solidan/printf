@@ -6,7 +6,7 @@
 /*   By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 12:55:55 by acuesta-          #+#    #+#             */
-/*   Updated: 2022/12/08 10:51:27 by acuesta-         ###   ########.fr       */
+/*   Updated: 2022/12/12 13:42:43 by acuesta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,17 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+
 int	ft_putchar(char c)
 {
 	write (1, &c, 1);
 	return (1);
+}
+
+int	ft_putchar_fd(char c)
+{
+	write (1, &c, 1);
+	return(1);
 }
 
 int	ft_putstr(char *str)
@@ -33,14 +40,17 @@ int	ft_putstr(char *str)
 	return (i);
 }
 
-void	ft_putnbr(int nb)
+int	ft_putnbr(int nb)//no contadora  1
 {
+	int i;
+	
+	i = 0;
 	if (nb == -2147483648)
-		ft_putstr("-2147483648");
+		return (ft_putstr("-2147483648"));
 	else if (nb < 0)
 	{
-		ft_putchar('-');
-		ft_putnbr(-nb);
+		i = ft_putchar('-');
+		i += ft_putnbr(-nb);
 	}
 	if (nb >= 10)
 	{
@@ -49,6 +59,7 @@ void	ft_putnbr(int nb)
 	}
 	else if (nb >= 0)
 		ft_putchar(nb + 48);
+	return(i);
 }
 /* void	ft_putnbr_fd(int n, int fd)
 {

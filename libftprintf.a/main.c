@@ -6,7 +6,7 @@
 /*   By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 11:06:34 by acuesta-          #+#    #+#             */
-/*   Updated: 2022/12/07 11:43:45 by acuesta-         ###   ########.fr       */
+/*   Updated: 2022/12/12 13:44:48 by acuesta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int	main(void)
 {
-	ft_printf("longitud = %c%c%c%c", 'a', 'b', 'c', 'd');
+	ft_printf("%d\n", ft_printf("%d\n",-1));
 	return (0);
 }
