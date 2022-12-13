@@ -27,7 +27,7 @@ size_t	ft_len_hex(unsigned int n)
 	return (length);
 }
 
-size_t	ft_printf_hex(unsigned int n, int *len)
+size_t	ft_printf_hex(unsigned int n)
 {
 	size_t	length;
 	char	*hexa;
@@ -36,12 +36,12 @@ size_t	ft_printf_hex(unsigned int n, int *len)
 	length = 0;
 	length += ft_len_hex(n);
 	if (n > 15)
-		ft_printf_hex(n / 16, len);
+		ft_printf_hex(n / 16);
 	ft_putchar_fd (hexa[n % 16]);
 	return (length);
 }
 
-size_t	ft_printf_hex_may(unsigned int n, int *len)
+size_t	ft_printf_hex_may(unsigned int n)
 {
 	size_t	length;
 	char	*hexa_m;
@@ -50,19 +50,19 @@ size_t	ft_printf_hex_may(unsigned int n, int *len)
 	length = 0;
 	length += ft_len_hex(n);
 	if (n > 15)
-		ft_printf_hex_may(n / 16, len);
+		ft_printf_hex_may(n / 16);
 	ft_putchar_fd(hexa_m[n % 16]);
 	return (length);
 }
 
-size_t	ft_num_base(unsigned int n, int *len)
+size_t	ft_num_base(unsigned int n)
 {
 	size_t	length;
 
 	length = 0;
 	if (n > 9)
 	{
-	length += ft_num_base(n % 10, len);
+	length += ft_num_base(n % 10);
 	length /= 10;
 	}
 	else

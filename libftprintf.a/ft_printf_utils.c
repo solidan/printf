@@ -6,7 +6,7 @@
 /*   By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 12:55:55 by acuesta-          #+#    #+#             */
-/*   Updated: 2022/12/12 13:42:43 by acuesta-         ###   ########.fr       */
+/*   Updated: 2022/12/13 11:45:02 by acuesta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,12 @@ int	ft_putstr(char *str)
 	return (i);
 }
 
-int	ft_putnbr(int nb)//no contadora  1
+int	ft_putnbr(int nb)//no contadora  
 {
-	int i;
+	int i; 
 	
 	i = 0;
+	
 	if (nb == -2147483648)
 		return (ft_putstr("-2147483648"));
 	else if (nb < 0)
@@ -58,7 +59,8 @@ int	ft_putnbr(int nb)//no contadora  1
 		ft_putnbr(nb % 10);
 	}
 	else if (nb >= 0)
-		ft_putchar(nb + 48);
+		i += ft_putchar(nb + 48);
+	printf("[%d]\n", i);
 	return(i);
 }
 /* void	ft_putnbr_fd(int n, int fd)

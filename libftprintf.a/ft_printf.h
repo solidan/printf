@@ -28,10 +28,10 @@ int		ft_putnbr(int nb);
 int		ft_putchar_fd(char c);
 
 // hexa
-size_t	ft_printf_hex(unsigned int n, int *len);
+size_t	ft_printf_hex(unsigned int n);
 size_t	ft_len_hex(unsigned int n);
-size_t	ft_printf_hex_may(unsigned int n, int *len);
-size_t	ft_num_base(unsigned int n, int *len);
-void	ft_putptr(unsigned long long int ptr, int *len);
+size_t	ft_printf_hex_may(unsigned int n);
+size_t	ft_num_base(unsigned int n);
+void	ft_putptr(unsigned long long int ptr);
 
 #endif

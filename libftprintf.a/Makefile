@@ -6,7 +6,7 @@
 #    By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/21 11:44:18 by acuesta-          #+#    #+#              #
-#    Updated: 2022/12/12 13:38:50 by acuesta-         ###   ########.fr        #
+#    Updated: 2022/12/13 11:08:50 by acuesta-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ CFLAGS = -Wall -Wextra -Werror -g
 SRCS = printf.c \
        ft_printf_utils.c \
 	   ft_print_hexa.c \
+	   main.c
 
 OBJS = $(SRCS:.c=.o)
 
