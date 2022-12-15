@@ -6,7 +6,7 @@
 /*   By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 12:55:55 by acuesta-          #+#    #+#             */
-/*   Updated: 2022/12/14 13:43:21 by acuesta-         ###   ########.fr       */
+/*   Updated: 2022/12/15 13:07:27 by acuesta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,6 @@
 #include <unistd.h>
 
 int	ft_putchar(char c)
-{
-	write (1, &c, 1);
-	return (1);
-}
-
-int	ft_putchar_fd(char c)
 {
 	write (1, &c, 1);
 	return (1);
@@ -39,7 +33,7 @@ int	ft_putstr(char *str)
 	return (i);
 }
 
-int	ft_putnbr(int nb)
+int	ft_putnbr(int nb) //!hacer otra para numeros enteros y decimales
 {
 	int	i;
 
