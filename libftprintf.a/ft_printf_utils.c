@@ -6,7 +6,7 @@
 /*   By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 12:55:55 by acuesta-          #+#    #+#             */
-/*   Updated: 2022/12/15 13:07:27 by acuesta-         ###   ########.fr       */
+/*   Updated: 2022/12/19 13:16:20 by acuesta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,16 @@ int	ft_putstr(char *str)
 	int	i;
 
 	i = 0;
+	if(str == NULL)
+		return(write(1, "(null)", 6));
 	while (str[i] != 0)
 	{
-		write (1, &str, 1);
+		write (1, str + i, 1); 
 		i++;
 	}
 	return (i);
 }
+
 
 int	ft_putnbr(int nb) //!hacer otra para numeros enteros y decimales
 {
@@ -54,6 +57,66 @@ int	ft_putnbr(int nb) //!hacer otra para numeros enteros y decimales
 		i += ft_putchar(nb + 48);
 	return (i);
 }
+
+
+
+
+
+
+
+// size_t	ft_strlen(const char *s)
+// {
+// 	int	c;
+
+// 	c = 0;
+// 	while (s[c] != '\0')
+// 		c++;
+// 	return (c);
+// }
+
+// int	ft_putstr(char *str)
+// {
+//     int	len;
+
+//     if (!str)
+//     {
+//         write (1, "(null)", 6);
+//         return (6);
+//     }
+//     len = ft_strlen(str); 
+//     write (1, str, len);
+//     return (len);
+// }
+
+
+// int ft_putnbr_dec(double nb)
+// {
+//    int i;
+ 
+//    i = 0;
+//    if (nb < 0)
+//    {
+//        i = ft_putchar('-');
+//        i += ft_putnbr_dec(-nb);
+//    }
+//    else
+//    {
+//        if (nb >= 10)
+//        {
+//            ft_putnbr_dec(nb / 10);
+//            ft_putnbr_dec(nb % 10);
+//        }
+//        else
+//            i += ft_putchar(nb + 48);
+//        if (nb - nb > 0)
+//        {
+//            i += ft_putchar('.');
+//            i += ft_putnbr_dec(nb * 10 - (nb * 10));
+//        }
+//    }
+//    return (i);
+// }
+
 
 /* void	ft_putnbr_fd(int n, int fd)
 {

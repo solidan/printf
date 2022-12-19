@@ -6,7 +6,7 @@
 /*   By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 11:44:27 by acuesta-          #+#    #+#             */
-/*   Updated: 2022/12/15 12:30:24 by acuesta-         ###   ########.fr       */
+/*   Updated: 2022/12/19 11:29:50 by acuesta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int		ft_putchar(char c);
 int		ft_putstr(char *str);
 int		ft_putnbr(int nb);
 int		ft_putchar_fd(char c);
+size_t	ft_strlen(const char *s);
 
 // hexa
 size_t	ft_printf_hex(unsigned int n);

@@ -6,7 +6,7 @@
 /*   By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 11:06:34 by acuesta-          #+#    #+#             */
-/*   Updated: 2022/12/15 13:04:56 by acuesta-         ###   ########.fr       */
+/*   Updated: 2022/12/19 10:06:02 by acuesta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(void)
 {
-	int	len = ft_printf("input %X\n%X\n",10 ,-2);
+	int	len = ft_printf("input %u\n%u\n",1,2);
 	ft_printf("final %d\n", len);
 	return (0);
 }
