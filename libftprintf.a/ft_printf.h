@@ -6,7 +6,7 @@
 /*   By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 11:44:27 by acuesta-          #+#    #+#             */
-/*   Updated: 2022/12/19 11:29:50 by acuesta-         ###   ########.fr       */
+/*   Updated: 2022/12/20 13:01:30 by acuesta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int		ft_putchar_fd(char c);
 size_t	ft_strlen(const char *s);
 
 // hexa
-size_t	ft_printf_hex(unsigned int n);
+size_t	ft_hex(unsigned int n);
 size_t	ft_len_hex(unsigned int n);
-size_t	ft_printf_hex_may(unsigned int n);
+size_t	ft_hex_may(unsigned int n);
 size_t	ft_num_base(unsigned int n);
 void	ft_putptr(unsigned long long int ptr);
 

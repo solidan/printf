@@ -6,7 +6,7 @@
 /*   By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 11:47:47 by acuesta-          #+#    #+#             */
-/*   Updated: 2022/12/19 11:03:36 by acuesta-         ###   ########.fr       */
+/*   Updated: 2022/12/20 13:01:45 by acuesta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ size_t	ft_len_hex(unsigned int n)
 	return (length);
 }
 
-size_t	ft_printf_hex(unsigned int n)
+size_t	ft_hex(unsigned int n)
 {
 	size_t	length;
 	char	*hexa;
@@ -36,12 +36,12 @@ size_t	ft_printf_hex(unsigned int n)
 	length = 0;
 	length += ft_len_hex(n);
 	if (n > 15)
-		ft_printf_hex(n / 16);
+		ft_hex(n / 16);
 	ft_putchar(hexa[n % 16]);
 	return (length);
 }
 
-size_t	ft_printf_hex_may(unsigned int n)
+size_t	ft_hex_may(unsigned int n)
 {
 	size_t	length;
 	char	*hexa_m;
@@ -50,7 +50,7 @@ size_t	ft_printf_hex_may(unsigned int n)
 	length = 0;
 	length += ft_len_hex(n);
 	if (n > 15)
-		ft_printf_hex_may(n / 16);
+		ft_hex_may(n / 16);
 	ft_putchar(hexa_m[n % 16]);
 	return (length);
 }
