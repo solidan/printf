@@ -6,7 +6,7 @@
 /*   By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:24:06 by acuesta-          #+#    #+#             */
-/*   Updated: 2022/12/20 13:22:01 by acuesta-         ###   ########.fr       */
+/*   Updated: 2022/12/21 13:05:47 by acuesta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ int	ft_convert(va_list ptr, const char *str)
 	if (*str == 's')
 		return (ft_putstr(va_arg(ptr, char *)));
 	if (*str == 'p')
-		return (ft_putstr("0x") + ft_hex(va_arg(ptr, unsigned long int)));
+		return (ft_putstr("0x") + ft_hex(va_arg(ptr, unsigned  int)));
 	if (*str == 'd')
 		return (ft_putnbr (va_arg(ptr, int)));
 	if (*str == 'i')
 		return (ft_putnbr(va_arg(ptr, int)));
 	if (*str == 'u')
-		return (ft_putnbr(va_arg(ptr, unsigned int)));
+		return (ft_num_base(va_arg(ptr, unsigned int)));
 	if (*str == 'x')
 		return (ft_hex(va_arg(ptr, unsigned int)));
 	if (*str == 'X')
