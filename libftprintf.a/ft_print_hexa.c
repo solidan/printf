@@ -6,7 +6,7 @@
 /*   By: acuesta- <acuesta-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 11:47:47 by acuesta-          #+#    #+#             */
-/*   Updated: 2022/12/21 13:06:25 by acuesta-         ###   ########.fr       */
+/*   Updated: 2022/12/22 11:04:03 by acuesta-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,20 +55,6 @@ size_t	ft_hex_may(unsigned int n)
 	return (length);
 }
 
-
-size_t	ft_len_base(unsigned int n)
-{
-	size_t	length;
-
-	length = 1;
-	while (n > 9)
-	{
-		n /= 10;
-		length++;
-	}
-	return (length);
-}
-
 size_t	ft_num_base(unsigned int nb)
 {
 	int	i;
@@ -79,7 +65,7 @@ size_t	ft_num_base(unsigned int nb)
 	else if (nb < 0)
 	{
 		i = ft_putchar ('-');
-		i += 	ft_num_base (-nb);
+		i += ft_num_base (-nb);
 	}
 	if (nb > 9)
 	{
@@ -91,3 +77,15 @@ size_t	ft_num_base(unsigned int nb)
 	return (i);
 }
 
+size_t	ft_putp(unsigned long long n)
+{
+	size_t	i;
+	char	*hexa;
+
+	hexa = "0123456789abcdef";
+	i = 0;
+	if (n > 15)
+		i += ft_putp(n / 16);
+	i += ft_putchar(hexa[n % 16]);
+	return (i);
+}
